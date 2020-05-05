@@ -9,6 +9,7 @@ fun main(args: Array<String>) {
 
     //executeTestFunction("test loop", ::testLoop)
     //executeTestFunction("test array", ::testArray)
+    //listFiles("e:\\rp\\mcn\\sync\\notes. prog''. lang\\")
 }
 
 fun printArgs(args: Array<String>) {

@@ -1,3 +1,5 @@
+import java.io.File
+
 fun testLoop() {
     for (i in 0..10 step 2) {
         print(i)
@@ -11,6 +13,7 @@ fun testArray() {
     println("The 4th number from of numbers is: $number")
 }
 
-fun rlTest() {
-    println("rlTest() called");
+fun listFiles(targetPath: String) {
+    val folders = File(targetPath).listFiles { file -> file.isDirectory }
+    folders?.forEach { folder -> println(folder) }
 }
