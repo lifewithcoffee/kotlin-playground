@@ -1,7 +1,32 @@
+import java.lang.reflect.Modifier
+import kotlin.reflect.KFunction
+import kotlin.reflect.jvm.javaMethod
+import kotlin.reflect.jvm.kotlinFunction
+
 fun main(args: Array<String>) {
-    println("Hello World!")
-    executeTestFunction("test loop", ::testLoop)
-    executeTestFunction("test array", ::testArray)
+    printArgs(args)
+    getFunctionFromFile(args[0], args[1])?.call()
+
+    //executeTestFunction("test loop", ::testLoop)
+    //executeTestFunction("test array", ::testArray)
+}
+
+fun printArgs(args: Array<String>) {
+    print("args: ")
+    for (arg in args){
+        print(arg)
+        print(' ')
+    }
+    println()
+}
+
+// for function "testLoop" in source file "app.kt", call: getFunctionFromFile("App", "testArray")
+fun getFunctionFromFile(fileName: String, funcName: String): KFunction<*>? {
+    val selfRef = ::getFunctionFromFile
+    val currentClass = selfRef.javaMethod!!.declaringClass
+    val classDefiningFunctions = currentClass.classLoader.loadClass("${fileName}Kt")
+    val javaMethod  = classDefiningFunctions.methods.find { it.name == funcName && Modifier.isStatic(it.modifiers)}
+    return javaMethod?.kotlinFunction
 }
 
 fun executeTestFunction(testName: String, fn: ()->Unit) {
@@ -10,15 +35,3 @@ fun executeTestFunction(testName: String, fn: ()->Unit) {
     println("\n")
 }
 
-fun testLoop() {
-    for (i in 0..10 step 2) {
-        print(i)
-        print(' ')
-    }
-}
-
-fun testArray() {
-    val numbers: IntArray = intArrayOf(10,22,34,14,75)
-    val number : Int = numbers[4]
-    println("The 4th number from of numbers is: $number")
-}
