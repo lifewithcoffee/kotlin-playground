@@ -14,6 +14,6 @@ fun testArray() {
 }
 
 fun listFiles(targetPath: String) {
-    val folders = File(targetPath).listFiles { file -> file.isDirectory }
+    val folders = File(targetPath).listFiles { file -> file.isDirectory && file.name.contains("startup")}
     folders?.forEach { folder -> println(folder) }
 }

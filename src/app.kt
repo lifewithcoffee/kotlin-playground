@@ -5,11 +5,11 @@ import kotlin.reflect.jvm.kotlinFunction
 
 fun main(args: Array<String>) {
     printArgs(args)
-    getFunctionFromFile(args[0], args[1])?.call()
+//    getFunctionFromFile(args[0], args[1])?.call()
 
-    //executeTestFunction("test loop", ::testLoop)
-    //executeTestFunction("test array", ::testArray)
-    //listFiles("e:\\rp\\mcn\\sync\\notes. prog''. lang\\")
+//    executeTestFunction("test loop", ::testLoop)
+//    executeTestFunction("test array", ::testArray)
+    listFiles("e:\\rp\\mcn\\sync")
 }
 
 fun printArgs(args: Array<String>) {
