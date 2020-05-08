@@ -1,3 +1,5 @@
+import CollectionDemo.testArray
+import FileDemo.listFiles
 import FunctionDemo.getFunctionFromFile
 import FunctionDemo.lambdaDemo
 
