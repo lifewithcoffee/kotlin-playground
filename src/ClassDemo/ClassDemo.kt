@@ -1,5 +1,11 @@
-class ClassDemo {
+package ClassDemo
 
+class ClassDemo (name: String) {
+    val firstProperty = "First property: $name".also(::println)
+
+    init {
+        println("First initializer block that prints ${name}")
+    }
 }
 
 data class Person(var name: String?,var age: Int?)
@@ -13,5 +19,5 @@ fun MutableList<Int>.swap(index1: Int, index2: Int) {
 
 // extension method demo 2
 fun ClassDemo.Foo(){
-    println("ClassDemo.Foo() called")
+    println("ClassDemo.ClassDemo.ClassDemo.Foo() called")
 }

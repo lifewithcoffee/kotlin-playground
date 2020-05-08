@@ -1,2 +1,4 @@
+package ClassDemo
+
 object ObjectDemo {
 }

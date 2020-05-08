@@ -1,15 +1,18 @@
-import java.lang.reflect.Modifier
-import kotlin.reflect.KFunction
-import kotlin.reflect.jvm.javaMethod
-import kotlin.reflect.jvm.kotlinFunction
+import FunctionDemo.getFunctionFromFile
+import FunctionDemo.lambdaDemo
 
 fun main(args: Array<String>) {
     printArgs(args)
-//    getFunctionFromFile(args[0], args[1])?.call()
 
-//    executeTestFunction("test loop", ::testLoop)
-//    executeTestFunction("test array", ::testArray)
-    listFiles("e:\\rp\\mcn\\sync")
+    // just call the first function for testing
+    arrayOf(
+        { lambdaDemo() },
+        { listFiles("e:\\rp\\mcn\\sync") },
+        { testLoop() },
+        { testArray() },
+        { getFunctionFromFile(args[0], args[1])?.call() },
+    {})[0]();       // the last parameter {} is just a placeholder for its previous ','
+
 }
 
 fun printArgs(args: Array<String>) {
@@ -19,20 +22,5 @@ fun printArgs(args: Array<String>) {
         print(' ')
     }
     println()
-}
-
-// for function "testLoop" in source file "app.kt", call: getFunctionFromFile("App", "testArray")
-fun getFunctionFromFile(fileName: String, funcName: String): KFunction<*>? {
-    val selfRef = ::getFunctionFromFile
-    val currentClass = selfRef.javaMethod!!.declaringClass
-    val classDefiningFunctions = currentClass.classLoader.loadClass("${fileName}Kt")
-    val javaMethod  = classDefiningFunctions.methods.find { it.name == funcName && Modifier.isStatic(it.modifiers)}
-    return javaMethod?.kotlinFunction
-}
-
-fun executeTestFunction(testName: String, fn: ()->Unit) {
-    println("=== $testName:")
-    fn()
-    println("\n")
 }
 
