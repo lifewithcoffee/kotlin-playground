@@ -1,1 +1,3 @@
-C:\Users\Ron\.IdeaIC2019.3\config\plugins\Kotlin\kotlinc\bin\kotlin -cp E:\sync_src\experiments\kotlin-github\kotlin-playground\out\production\kotlin-playground AppKt %*
+@echo off
+C:\Users\Ron\AppData\Roaming\JetBrains\IdeaIC2020.1\plugins\Kotlin\kotlinc\bin\kotlin.bat -cp E:\sync_src\experiments\kotlin-github\kotlin-playground\out\production\kotlin-playground AppKt %*
+@echo on
