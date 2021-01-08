@@ -1,4 +1,4 @@
-package CollectionDemo
+package collectionDemo
 
 fun testArray() {
     val numbers: IntArray = intArrayOf(10,22,34,14,75)

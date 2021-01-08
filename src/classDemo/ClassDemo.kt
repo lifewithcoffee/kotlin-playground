@@ -1,4 +1,4 @@
-package ClassDemo
+package classDemo
 
 class ClassDemo (name: String) {
     val firstProperty = "First property: $name".also(::println)
@@ -10,6 +10,8 @@ class ClassDemo (name: String) {
 
 data class Person(var name: String?,var age: Int?)
 
+class Person2(var name: String?,var age: Int?)
+
 // extension method demo 1
 fun MutableList<Int>.swap(index1: Int, index2: Int) {
     val tmp = this[index1] // 'this' corresponds to the list
@@ -19,5 +21,10 @@ fun MutableList<Int>.swap(index1: Int, index2: Int) {
 
 // extension method demo 2
 fun ClassDemo.Foo(){
-    println("ClassDemo.ClassDemo.ClassDemo.Foo() called")
+    println("ClassDemo.Foo() called")
+}
+
+fun doClassDemo() {
+    println("doClassDemo() called")
+    ClassDemo("someName").Foo()
 }
