@@ -1,4 +1,4 @@
-package functionDemo
+package functionDemos
 
 fun testFunction(){
     println("someFn() called")

@@ -1,4 +1,4 @@
-package functionDemo
+package functionDemos
 
 import java.lang.reflect.Modifier
 import kotlin.reflect.KFunction

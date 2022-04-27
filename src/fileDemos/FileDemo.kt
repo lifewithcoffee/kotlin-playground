@@ -1,4 +1,4 @@
-package fileDemo
+package fileDemos
 
 import java.io.File
 

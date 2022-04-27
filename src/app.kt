@@ -1,13 +1,8 @@
-import classDemo.doClassDemo
-import collectionDemo.testArray
-import fileDemo.listFiles
-import functionDemo.getFunctionFromFile
-import functionDemo.lambdaDemo
-import kotlin.reflect.KFunction
-
-
-val fn = { listFiles("i:\\rp\\mcn\\sync") }
-val fn2 : KFunction<Unit> = ::doClassDemo
+import classDemos.doClassDemo
+import collectionDemos.testArray
+import fileDemos.listFiles
+import functionDemos.getFunctionFromFile
+import functionDemos.lambdaDemo
 
 fun main(args: Array<String>) {
     printArgs(args)
@@ -34,4 +29,3 @@ fun printArgs(args: Array<String>) {
         println()
     }
 }
-

@@ -1,4 +1,4 @@
-package classDemo
+package classDemos
 
 interface InterfaceDemo {
 }

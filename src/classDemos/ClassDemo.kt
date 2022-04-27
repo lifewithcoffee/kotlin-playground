@@ -1,4 +1,4 @@
-package classDemo
+package classDemos
 
 class ClassDemo (name: String) {
     val firstProperty = "First property: $name".also(::println)
